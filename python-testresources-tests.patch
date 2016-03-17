@@ -1,0 +1,14 @@
+--- testresources-1.0.0/Makefile.orig	2015-12-04 03:05:09.000000000 +0100
++++ testresources-1.0.0/Makefile	2016-03-17 17:01:03.083248473 +0100
+@@ -1,9 +1,10 @@
+ PYTHONPATH:=$(shell pwd)/lib:${PYTHONPATH}
++PYTHON=python
+ 
+ all:
+ 
+ check:
+-	PYTHONPATH=$(PYTHONPATH) python -m testtools.run discover .
++	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m testtools.run discover .
+ 
+ clean:
+ 	find . -name '*.pyc' -print0 | xargs -0 rm -f
