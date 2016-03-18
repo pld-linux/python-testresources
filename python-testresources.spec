@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	tests	# make check
+%bcond_without	tests	# make check [note: testBasicSortTests sometimes fails, non-deterministically]
 %bcond_without	python2 # CPython 2.x module
 %bcond_without	python3 # CPython 3.x module
 
