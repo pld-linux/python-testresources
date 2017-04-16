@@ -7,35 +7,39 @@
 Summary:	Testresources - pyunit extension for managing expensive test resources
 Summary(pl.UTF-8):	Testresources - rozszerzenie pyunit do zarządzania kosztownymi zasobami dla testów
 Name:		python-testresources
-Version:	1.0.0
-Release:	2
+Version:	2.0.1
+Release:	1
 License:	Apache v2.0 or BSD
 Group:		Libraries/Python
 #Source0Download: https://pypi.python.org/simple/testresources/
-Source0:	https://pypi.python.org/packages/source/t/testresources/testresources-%{version}.tar.gz
-# Source0-md5:	32baee3f93d237192addc061646057b9
+Source0:	https://files.pythonhosted.org/packages/source/t/testresources/testresources-%{version}.tar.gz
+# Source0-md5:	8873ab443db5569528964f524228a2d7
 Patch0:		%{name}-tests.patch
 URL:		https://launchpad.net/testresources
-BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
-BuildRequires:	python-docutils
-BuildRequires:	python-fixtures
-BuildRequires:	python-modules >= 1:2.5
+BuildRequires:	python-modules >= 1:2.6
 BuildRequires:	python-pbr >= 1.3
 BuildRequires:	python-setuptools
+%if %{with tests}
+BuildRequires:	python-docutils
+BuildRequires:	python-fixtures
 BuildRequires:	python-testtools
 %endif
+%endif
 %if %{with python3}
-BuildRequires:	python3-docutils
-BuildRequires:	python3-fixtures
-BuildRequires:	python3-modules >= 1:3.2
+BuildRequires:	python3-modules >= 1:3.3
 BuildRequires:	python3-pbr >= 1.3
 BuildRequires:	python3-setuptools
+%if %{with tests}
+BuildRequires:	python3-docutils
+BuildRequires:	python3-fixtures
 BuildRequires:	python3-testtools
 %endif
+%endif
+BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.714
 Requires:	python-fixtures
-Requires:	python-modules >= 1:2.5
+Requires:	python-modules >= 1:2.6
 Requires:	python-testtools
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -58,7 +62,7 @@ Summary:	Testresources - pyunit extension for managing expensive test resources
 Summary(pl.UTF-8):	Testresources - rozszerzenie pyunit do zarządzania kosztownymi zasobami dla testów
 Group:		Libraries/Python
 Requires:	python3-fixtures
-Requires:	python3-modules >= 1:3.2
+Requires:	python3-modules >= 1:3.3
 Requires:	python3-testtools
 
 %description -n python3-testresources
@@ -112,7 +116,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python2}
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS BSD COPYING ChangeLog GOALS NEWS README TODO
+%doc AUTHORS BSD COPYING ChangeLog GOALS NEWS README.rst TODO
 %{py_sitescriptdir}/testresources
 %{py_sitescriptdir}/testresources-%{version}-py*.egg-info
 %endif
@@ -120,7 +124,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python3}
 %files -n python3-testresources
 %defattr(644,root,root,755)
-%doc AUTHORS BSD COPYING ChangeLog GOALS NEWS README TODO
+%doc AUTHORS BSD COPYING ChangeLog GOALS NEWS README.rst TODO
 %{py3_sitescriptdir}/testresources
 %{py3_sitescriptdir}/testresources-%{version}-py*.egg-info
 %endif
