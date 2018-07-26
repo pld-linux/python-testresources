@@ -11,7 +11,7 @@ Version:	2.0.1
 Release:	2
 License:	Apache v2.0 or BSD
 Group:		Libraries/Python
-#Source0Download: https://pypi.python.org/simple/testresources/
+#Source0Download: https://pypi.org/simple/testresources/
 Source0:	https://files.pythonhosted.org/packages/source/t/testresources/testresources-%{version}.tar.gz
 # Source0-md5:	8873ab443db5569528964f524228a2d7
 Patch0:		%{name}-tests.patch
