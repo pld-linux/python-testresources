@@ -22,7 +22,7 @@ BuildRequires:	python-pbr >= 1.3
 BuildRequires:	python-setuptools
 %if %{with tests}
 BuildRequires:	python-docutils
-BuildRequires:	python-fixtures
+BuildRequires:	python-fixtures >= 3.0.0-9
 BuildRequires:	python-testtools
 %endif
 %endif
@@ -32,7 +32,7 @@ BuildRequires:	python3-pbr >= 1.3
 BuildRequires:	python3-setuptools
 %if %{with tests}
 BuildRequires:	python3-docutils
-BuildRequires:	python3-fixtures
+BuildRequires:	python3-fixtures >= 3.0.0-9
 BuildRequires:	python3-testtools
 %endif
 %endif
