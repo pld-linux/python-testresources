@@ -8,7 +8,7 @@ Summary:	Testresources - pyunit extension for managing expensive test resources
 Summary(pl.UTF-8):	Testresources - rozszerzenie pyunit do zarządzania kosztownymi zasobami dla testów
 Name:		python-testresources
 Version:	2.0.1
-Release:	7
+Release:	8
 License:	Apache v2.0 or BSD
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/testresources/
