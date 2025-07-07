@@ -7,18 +7,18 @@
 Summary:	Testresources - pyunit extension for managing expensive test resources
 Summary(pl.UTF-8):	Testresources - rozszerzenie pyunit do zarządzania kosztownymi zasobami dla testów
 Name:		python-testresources
-Version:	2.0.1
-Release:	9
+Version:	2.0.2
+Release:	1
 License:	Apache v2.0 or BSD
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/testresources/
 Source0:	https://files.pythonhosted.org/packages/source/t/testresources/testresources-%{version}.tar.gz
-# Source0-md5:	8873ab443db5569528964f524228a2d7
+# Source0-md5:	4162baee9afbee0c176754534145ef3d
 Patch0:		%{name}-tests.patch
 URL:		https://launchpad.net/testresources
 %if %{with python2}
-BuildRequires:	python-modules >= 1:2.6
-BuildRequires:	python-pbr >= 1.3
+BuildRequires:	python-modules >= 1:2.7
+BuildRequires:	python-pbr >= 1.8
 BuildRequires:	python-setuptools
 %if %{with tests}
 BuildRequires:	python-docutils
@@ -27,8 +27,8 @@ BuildRequires:	python-testtools
 %endif
 %endif
 %if %{with python3}
-BuildRequires:	python3-modules >= 1:3.3
-BuildRequires:	python3-pbr >= 1.3
+BuildRequires:	python3-modules >= 1:3.4
+BuildRequires:	python3-pbr >= 1.8
 BuildRequires:	python3-setuptools
 %if %{with tests}
 BuildRequires:	python3-docutils
@@ -38,9 +38,7 @@ BuildRequires:	python3-testtools
 %endif
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
-Requires:	python-fixtures
-Requires:	python-modules >= 1:2.6
-Requires:	python-testtools
+Requires:	python-modules >= 1:2.7
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -61,9 +59,7 @@ aplikacji biznesowych albo serwerów WWW.
 Summary:	Testresources - pyunit extension for managing expensive test resources
 Summary(pl.UTF-8):	Testresources - rozszerzenie pyunit do zarządzania kosztownymi zasobami dla testów
 Group:		Libraries/Python
-Requires:	python3-fixtures
-Requires:	python3-modules >= 1:3.3
-Requires:	python3-testtools
+Requires:	python3-modules >= 1:3.4
 
 %description -n python3-testresources
 testresources extends unittest with a clean and simple API to provide

@@ -12,21 +12,3 @@
  
  clean:
  	find . -name '*.pyc' -print0 | xargs -0 rm -f
---- testresources-2.0.1/testresources/tests/test_resourced_test_case.py.orig	2015-12-04 02:22:16.000000000 +0100
-+++ testresources-2.0.1/testresources/tests/test_resourced_test_case.py	2025-03-22 11:37:50.090961915 +0100
-@@ -129,7 +129,7 @@ class TestResourcedTestCase(testtools.Te
-         self.resourced_case.resources = [("foo", self.resource_manager)]
-         self.resourced_case.setUpResources()
-         self.resourced_case.tearDownResources()
--        self.failIf(hasattr(self.resourced_case, "foo"))
-+        self.assertFalse(hasattr(self.resourced_case, "foo"))
- 
-     def testTearDownResourcesStopsUsingResource(self):
-         # tearDownResources records that there is one less use of each
-@@ -158,5 +158,5 @@ class TestResourcedTestCase(testtools.Te
-         self.assertEqual(self.resourced_case.foo, self.resource)
-         self.assertEqual(self.resource_manager._uses, 1)
-         self.resourced_case.tearDown()
--        self.failIf(hasattr(self.resourced_case, "foo"))
-+        self.assertFalse(hasattr(self.resourced_case, "foo"))
-         self.assertEqual(self.resource_manager._uses, 0)
